@@ -29,7 +29,7 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
 .sectionLabel{font-weight:1000;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:#f5c6c6;margin-bottom:10px}
 .trackGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.trackBtn{min-height:116px;border-radius:19px;padding:12px;text-align:left;background:#202129;border:2px solid transparent;position:relative;overflow:hidden}.trackBtn.active{border-color:var(--red);box-shadow:0 0 0 3px #ef2b2d20}.trackBtn .ico{font-size:34px}.trackBtn b{display:block;margin-top:8px;font-size:14px}.trackBtn small{display:block;color:#aeb2bf;margin-top:3px;line-height:1.25}.trackBtn::after{content:"";position:absolute;width:70px;height:70px;border-radius:50%;background:#ffffff0a;right:-25px;top:-25px}
 .optionRow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.opt{display:grid;gap:6px}.opt label{font-size:11px;color:#9fa4b1;font-weight:900;text-transform:uppercase}.opt select{height:46px;border-radius:14px;border:1px solid #ffffff17;background:#0f1015;color:#fff;padding:0 11px;font-weight:800;outline:none}
-.carColors{display:flex;gap:10px}.carColor{width:46px;height:46px;border-radius:15px;border:3px solid #fff2;box-shadow:inset 0 0 0 3px #0002}.carColor.active{outline:3px solid #fff;outline-offset:2px}
+.modelGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}.modelBtn{min-height:80px;border-radius:18px;padding:12px;text-align:left;background:#202129;border:2px solid transparent;display:flex;flex-direction:column;justify-content:center;gap:4px}.modelBtn b{font-size:14px}.modelBtn small{color:#aeb2bf;line-height:1.25}.modelBtn.active{border-color:var(--red);box-shadow:0 0 0 3px #ef2b2d20}.carColors{display:flex;gap:10px;flex-wrap:wrap}.carColor{width:52px;height:52px;border-radius:16px;border:3px solid #fff2;box-shadow:inset 0 0 0 3px #0002}.carColor.active{outline:3px solid #fff;outline-offset:2px}.mission.warn{background:#5b1419ee;border-color:#ff777f;color:#fff7f7;box-shadow:0 10px 28px #ff303833}
 .playBtn{width:100%;min-height:58px;margin-top:14px;border-radius:18px;background:linear-gradient(135deg,#ff3a36,#c60f17);font-size:18px;font-weight:1000;box-shadow:0 13px 28px #ef2b2d44;display:flex;align-items:center;justify-content:center;gap:10px}.playBtn:active{transform:translateY(2px)}
 .menuActions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.secondary{min-height:46px;border-radius:15px;background:#202129;border:1px solid #ffffff12;font-weight:900}.valueStrip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.valueChip{background:#0f1116;border:1px solid #ffffff12;border-radius:14px;padding:10px 8px;text-align:center;font-size:11px;color:#d8dbe2;font-weight:800}.valueChip span{display:block;font-size:23px;margin-bottom:4px}.learnStat{color:#8ee8b4;font-weight:1000}.safetyGood{color:#67e29a}.safetyWarn{color:#ffd45a}.safetyBad{color:#ff666d}.quizQ{text-align:left;background:#101218;border:1px solid #ffffff12;border-radius:16px;padding:14px;margin:12px 0;font-size:15px;line-height:1.45;font-weight:900}.quizAnswers{display:grid;gap:9px}.quizAnswer{min-height:50px;border-radius:14px;background:#252832;border:1px solid #ffffff14;padding:11px 13px;text-align:left;font-weight:800}.quizAnswer:active{transform:translateY(2px)}.lessonTag{display:inline-block;padding:6px 10px;border-radius:999px;background:#173523;color:#79e7a8;font-size:11px;font-weight:1000;margin-bottom:5px}.resultLesson{background:#102118;border:1px solid #2b7046;border-radius:14px;padding:11px;margin-top:10px;color:#c9f7d8;font-size:12px;line-height:1.45}
 
@@ -85,10 +85,10 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
   .gas{grid-column:2;grid-row:1/3;width:70px;height:135px;border-radius:24px;font-size:13px;letter-spacing:.2px;background:linear-gradient(#42df88,#14864a);border-color:#92ffc1aa;box-shadow:0 9px 22px #0009,inset 0 -7px 0 #0a5b36}
   .gas .steerLabel{font-size:9px;margin-top:5px;color:#eafff2}.steerLabel{font-size:8px}
   /* Paparan soalan Android dibesarkan supaya mudah dibaca */
-  .overlay{padding:9px}.overlayCard{width:min(calc(100vw - 18px),430px);max-height:92dvh;overflow:auto;padding:20px 18px;border-radius:22px}
+  .overlay{padding:9px}.overlayCard{width:min(calc(100vw - 18px),500px);max-height:92dvh;overflow:auto;padding:20px 18px;border-radius:22px}
   .overlayCard h2{font-size:26px;line-height:1.15;margin:8px 0 10px}.overlayCard p{font-size:14px;line-height:1.5}
-    .lessonTag{font-size:14px;padding:8px 12px}.quizQ{font-size:23px;line-height:1.42;padding:20px 17px;margin:15px 0;border-radius:19px;text-align:center}
-  .quizAnswers{gap:12px}.quizAnswer{min-height:68px;font-size:19px;line-height:1.35;padding:15px 16px;border-radius:17px}.quizAnswer b{font-size:20px;margin-right:6px}
+    .lessonTag{font-size:14px;padding:8px 12px}.quizQ{font-size:25px;line-height:1.45;padding:22px 18px;margin:15px 0;border-radius:19px;text-align:center}
+  .quizAnswers{gap:13px}.quizAnswer{min-height:72px;font-size:20px;line-height:1.38;padding:16px 17px;border-radius:17px}.quizAnswer b{font-size:21px;margin-right:6px}
   .ovBtn{height:50px;font-size:14px}
   .toast{top:34%;font-size:12px}
 }
@@ -96,8 +96,8 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
 /* Telefon Android rendah / kecil */
 @media (max-width:380px) and (orientation:portrait){
   .steerPad{grid-template-columns:repeat(2,56px)}.ctrl{width:56px;height:58px}.pedalPad{grid-template-columns:52px 64px;grid-template-rows:52px 64px}.boost{width:52px;height:52px}.brake{width:52px;height:64px}.gas{width:64px;height:123px}
-  .mission{width:calc(100% - 80px);font-size:8px}.hudBig{font-size:14px}.trackBtn{min-height:81px!important}
-  .overlayCard{padding:17px 14px}.overlayCard h2{font-size:25px}.quizQ{font-size:20px;padding:16px 13px}.quizAnswer{min-height:62px;font-size:17px;padding:13px}.lessonTag{font-size:12px}
+  .mission{width:calc(100% - 80px);font-size:8px}.hudBig{font-size:14px}.trackBtn{min-height:81px!important}.modelGrid{grid-template-columns:1fr}
+  .overlayCard{padding:17px 14px}.overlayCard h2{font-size:25px}.quizQ{font-size:22px;padding:17px 13px}.quizAnswer{min-height:64px;font-size:18px;padding:13px}.lessonTag{font-size:12px}
 }
 
 </style>
@@ -109,7 +109,7 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
       <div class="logoRow">
         <div class="logoBadge">🚗</div>
         <h1>JPJ Junior Drive</h1>
-        <p class="tagline">Main kereta JPJ dengan lebih laju sambil belajar keselamatan jalan raya. Kumpul mata, potong dengan selamat dan jawab 10 Misi JPJ!</p>
+        <p class="tagline">Main kereta sport gaya JPJ dengan lebih laju sambil belajar keselamatan jalan raya. Pilih model dan warna metallic, kumpul mata, potong dengan selamat dan jawab 10 Misi JPJ!</p>
       </div>
 
       <div class="card">
@@ -128,15 +128,21 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
 
       <div class="card">
         <div class="optionRow">
-          <div class="opt"><label>Kelajuan dashboard</label><select id="speedLimit"><option value="540" data-dash="90">90 km/j</option><option value="800" data-dash="120" selected>120 km/j</option><option value="2500" data-dash="140">140 km/j</option></select></div>
-          <div class="opt"><label>Misi JPJ</label><select id="lapCount"><option value="10" selected>10 soalan · ±1 min/soalan</option></select></div>
+          <div class="opt"><label>Kelajuan dashboard</label><select id="speedLimit"><option value="540" data-dash="90">90 km/j</option><option value="800" data-dash="120" selected>120 km/j</option><option value="1500" data-dash="140">140 km/j</option></select></div>
+          <div class="opt"><label>Misi JPJ</label><select id="lapCount"><option value="10" selected>10 soalan · ±45s/soalan</option></select></div>
         </div>
-        <div class="sectionLabel" style="margin-top:14px">Warna kereta</div>
+        <div class="sectionLabel" style="margin-top:14px">Model kereta</div>
+        <div class="modelGrid">
+          <button class="modelBtn active" data-model="supraR"><b>Supra Aero</b><small>Spoiler tinggi · lampu bulat · rupa belakang seperti kereta sport</small></button>
+          <button class="modelBtn" data-model="streetR"><b>Supra Street</b><small>Wide body · spoiler rendah · masih saiz yang sama</small></button>
+        </div>
+        <div class="sectionLabel" style="margin-top:14px">Warna kereta metallic</div>
         <div class="carColors">
-          <button class="carColor active" data-color="#ef2b2d" style="background:#ef2b2d"></button>
-          <button class="carColor" data-color="#ffd43d" style="background:#ffd43d"></button>
-          <button class="carColor" data-color="#151820" style="background:#151820"></button>
-          <button class="carColor" data-color="#ffffff" style="background:#ffffff"></button>
+          <button class="carColor active" data-palette="crimson" style="background:linear-gradient(135deg,#ff6a62,#bb0f15 55%,#5e0409)"></button>
+          <button class="carColor" data-palette="sunsetGold" style="background:linear-gradient(135deg,#ffe394,#f2ab10 55%,#8a5b00)"></button>
+          <button class="carColor" data-palette="gunmetal" style="background:linear-gradient(135deg,#a0a5b2,#424751 55%,#141820)"></button>
+          <button class="carColor" data-palette="arcticSilver" style="background:linear-gradient(135deg,#ffffff,#dfe4ea 55%,#8a919c)"></button>
+          <button class="carColor" data-palette="cobaltBlue" style="background:linear-gradient(135deg,#82b7ff,#1c59cf 55%,#0a245c)"></button>
         </div>
       </div>
 
@@ -157,7 +163,7 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
       <div class="hudBox center"><div class="hudLabel">Soalan</div><div class="hudBig"><span id="lapText">0</span>/<span id="lapMaxText">10</span></div><div id="trackText" class="hudSmall">Bandar</div></div>
       <div class="hudBox right"><div class="hudLabel">Markah</div><div id="scoreText" class="hudBig">0</div><div id="coinText" class="hudSmall">⭐ 0 · 🧠 0/10</div></div>
     </div>
-    <div id="mission" class="mission">Misi: <strong>Kumpul mata & potong selamat</strong> · soalan JPJ akan muncul kira-kira setiap 1 minit.</div>
+    <div id="mission" class="mission">Misi: <strong>Kumpul mata & potong selamat</strong> · soalan JPJ akan muncul kira-kira setiap 45 saat.</div>
     <button id="soundBtn" class="soundBtn">🔊</button>
     <button id="pauseBtn" class="pauseBtn">⏸</button>
 
@@ -186,13 +192,22 @@ const menuScreen=$("#menuScreen"),gameScreen=$("#gameScreen"),canvas=$("#gameCan
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const lerp=(a,b,t)=>a+(b-a)*t;
 const rand=(a,b)=>a+Math.random()*(b-a);
-let selectedTrack="city", carColor="#ef2b2d", audioEnabled=true;
+let selectedTrack="city", selectedPalette="crimson", selectedModel="supraR", audioEnabled=true;
 
 const TRACKS={
- city:{name:"Bandar",sky1:"#76c8f2",sky2:"#dff4ff",ground:"#7c9b6b",road:"#4e5158",lane:"#f4f4f0",curve:0.68,traffic:.58,roadWidth:0.82,decor:"city",lapDistance:1800},
- coast:{name:"Pantai",sky1:"#65c6f4",sky2:"#e8fbff",ground:"#d8c58d",road:"#51545a",lane:"#fff",curve:0.45,traffic:.46,roadWidth:.9,decor:"coast",lapDistance:2200},
- hill:{name:"Bukit",sky1:"#8bc7e8",sky2:"#e9f4f8",ground:"#4d7e4d",road:"#494b50",lane:"#f7f0d8",curve:1.0,traffic:.62,roadWidth:.72,decor:"hill",lapDistance:1650}
+ city:{name:"Bandar",sky1:"#76c8f2",sky2:"#dff4ff",ground:"#7c9b6b",road:"#4e5158",lane:"#f4f4f0",curve:0.68,traffic:.58,roadWidth:0.92,decor:"city",lapDistance:1800,limit:90},
+ coast:{name:"Pantai",sky1:"#65c6f4",sky2:"#e8fbff",ground:"#d8c58d",road:"#51545a",lane:"#fff",curve:0.45,traffic:.46,roadWidth:.98,decor:"coast",lapDistance:2200,limit:120},
+ hill:{name:"Bukit",sky1:"#8bc7e8",sky2:"#e9f4f8",ground:"#4d7e4d",road:"#494b50",lane:"#f7f0d8",curve:1.0,traffic:.62,roadWidth:.84,decor:"hill",lapDistance:1650,limit:90}
 };
+const CAR_PALETTES={
+ crimson:{base:'#c51318',light:'#ff7c73',dark:'#6e090d',glass:'#90bbd7',trim:'#161920'},
+ sunsetGold:{base:'#d89b17',light:'#ffe08a',dark:'#825500',glass:'#8fb7d2',trim:'#17181d'},
+ gunmetal:{base:'#525864',light:'#a9afba',dark:'#1b1f28',glass:'#9ab3c7',trim:'#0d1015'},
+ arcticSilver:{base:'#e6ebf0',light:'#ffffff',dark:'#8d949f',glass:'#9cc3d8',trim:'#11151a'},
+ cobaltBlue:{base:'#245fd7',light:'#90beff',dark:'#0a2768',glass:'#95c1dd',trim:'#11141a'}
+};
+function currentPalette(){return CAR_PALETTES[selectedPalette]||CAR_PALETTES.crimson}
+
 
 const LESSONS=[
  {icon:"🚦",title:"Lampu Isyarat",q:"Apakah tindakan apabila lampu isyarat MERAH?",a:["Berhenti","Tambah laju","Bunyikan hon"],correct:0,tip:"Lampu merah bermaksud berhenti dan tunggu sehingga selamat untuk bergerak semula."},
@@ -208,7 +223,8 @@ const LESSONS=[
 ];
 
 $$('.trackBtn').forEach(b=>b.onclick=()=>{$$('.trackBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedTrack=b.dataset.track});
-$$('.carColor').forEach(b=>b.onclick=()=>{$$('.carColor').forEach(x=>x.classList.remove('active'));b.classList.add('active');carColor=b.dataset.color});
+$$('.carColor').forEach(b=>b.onclick=()=>{$$('.carColor').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedPalette=b.dataset.palette;});
+$$('.modelBtn').forEach(b=>b.onclick=()=>{$$('.modelBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedModel=b.dataset.model;});
 
 let AC=null,engineOsc=null,engineOsc2=null,engineGain=null,engineGain2=null,engineFilter=null,windSource=null,windGain=null,musicTimer=null,lastShiftGear=0;
 function ensureAudio(){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;if(!AC)AC=new C();if(AC.state==='suspended')AC.resume().catch(()=>{});return AC}catch(e){return null}}
@@ -220,7 +236,7 @@ function startEngine(){if(!audioEnabled)return;const a=ensureAudio();if(!a)retur
 function stopEngine(){try{engineOsc?.stop()}catch(e){}try{engineOsc2?.stop()}catch(e){}try{windSource?.stop()}catch(e){}engineOsc=null;engineOsc2=null;engineGain=null;engineGain2=null;engineFilter=null;windSource=null;windGain=null}
 function updateEngine(speed){if(!AC||!engineOsc)return;const gear=speed<5?0:Math.min(8,Math.max(1,Math.ceil(speed/48)));const rpmBand=gear?((speed-(gear-1)*48)/48):0;const base=96+gear*15+rpmBand*110;engineOsc.frequency.setTargetAtTime(base,AC.currentTime,.035);engineOsc2.frequency.setTargetAtTime(base*2.02,AC.currentTime,.035);if(engineFilter)engineFilter.frequency.setTargetAtTime(1200+speed*8.5,AC.currentTime,.06);if(engineGain)engineGain.gain.setTargetAtTime(.020+Math.min(.014,speed/18000),AC.currentTime,.05);if(engineGain2)engineGain2.gain.setTargetAtTime(.0045+Math.min(.006,speed/35000),AC.currentTime,.05);if(windGain)windGain.gain.setTargetAtTime(Math.max(.0001,Math.min(.024,(speed-35)/9000)),AC.currentTime,.08);if(gear>0&&gear!==lastShiftGear&&lastShiftGear>0){beep(880+gear*70,.045,'square',.015)}lastShiftGear=gear}
 
-const game={running:false,paused:false,last:0,speed:0,targetSpeed:0,maxSpeed:800,dashboardMin:0,dashboardMax:120,cruiseSpeed:120,lap:1,laps:1,distance:0,score:0,coins:0,overtakes:0,safeOvertakes:0,unsafePasses:0,safety:100,lessonIndex:0,lessonCorrect:0,questionIntervalMs:60000,nextLessonMs:60000,activePlayMs:0,quizActive:false,carX:0,carVX:0,trackPos:0,roadScroll:0,worldTravel:0,objects:[],spawn:0,boost:100,usingBoost:false,left:false,right:false,gas:false,brake:false,crash:0,startedAt:0,bestSpeed:0,clean:true,raf:0};
+const game={running:false,paused:false,last:0,speed:0,targetSpeed:0,maxSpeed:800,dashboardMin:0,dashboardMax:120,cruiseSpeed:120,lap:1,laps:1,distance:0,score:0,coins:0,overtakes:0,safeOvertakes:0,unsafePasses:0,safety:100,lessonIndex:0,lessonCorrect:0,questionIntervalMs:45000,nextLessonMs:45000,activePlayMs:0,quizActive:false,carX:0,carVX:0,trackPos:0,roadScroll:0,worldTravel:0,objects:[],spawn:0,boost:100,usingBoost:false,left:false,right:false,gas:false,brake:false,crash:0,startedAt:0,bestSpeed:0,clean:true,speedWarning:false,raf:0};
 
 function resize(){const dpr=Math.min(2,window.devicePixelRatio||1);const r=canvas.getBoundingClientRect();canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
 window.addEventListener('resize',resize);
@@ -243,7 +259,7 @@ function roadYAtDepth(d,h){
   return horizon+Math.pow(clamp(d,0,1),1.72)*(h-horizon);
 }
 function roadWidthAtDepth(d,w,T=TRACKS[selectedTrack]){
-  return lerp(w*.045,w*T.roadWidth,Math.pow(clamp(d,0,1),1.28));
+  return lerp(w*.06,w*T.roadWidth,Math.pow(clamp(d,0,1),1.22));
 }
 function roadCenterAtDepth(d,w){
   // d=0 is horizon, d=1 is player. Future bends pull the vanishing point sideways,
@@ -462,56 +478,100 @@ function drawCoin(x,y,s){ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.rotate
 function drawPlayerCar(w,h){
   const rw=roadWidthAtDepth(1,w),roadBottomCenter=roadCenterAtDepth(1,w);
   const x=roadBottomCenter+game.carX*rw*.285;
-  const y=h*.785;
-  const s=clamp(Math.min(w/430,h/720)*1.08,.78,1.34);
+  const y=h*.79;
+  const s=clamp(Math.min(w/420,h/710)*1.13,.84,1.38);
+  const pal=currentPalette();
   ctx.save();ctx.translate(x,y);ctx.rotate(-game.carVX*.012);ctx.scale(s,s);
 
-  // Ground shadow
-  ctx.fillStyle='#0007';ctx.beginPath();ctx.ellipse(0,41,70,18,0,0,Math.PI*2);ctx.fill();
+  const bodyGrad=ctx.createLinearGradient(-75,-70,70,60);
+  bodyGrad.addColorStop(0,pal.light);bodyGrad.addColorStop(.28,pal.base);bodyGrad.addColorStop(.68,shadeHex(pal.base,-8));bodyGrad.addColorStop(1,pal.dark);
+  const darkGrad=ctx.createLinearGradient(0,-50,0,52);
+  darkGrad.addColorStop(0,shadeHex(pal.trim,12));darkGrad.addColorStop(1,shadeHex(pal.trim,-12));
 
-  // Four visible rear-side tyres
-  ctx.fillStyle='#111217';
-  roundRect(-66,-8,20,54,7);ctx.fill();roundRect(46,-8,20,54,7);ctx.fill();
-  ctx.fillStyle='#2c2e34';roundRect(-63,-3,14,44,5);ctx.fill();roundRect(49,-3,14,44,5);ctx.fill();
+  ctx.fillStyle='#0008';ctx.beginPath();ctx.ellipse(0,49,78,18,0,0,Math.PI*2);ctx.fill();
 
-  // Rear body: low, wide proportions like a sports hatch/sedan.
-  ctx.shadowColor='#0009';ctx.shadowBlur=19;ctx.shadowOffsetY=10;
-  ctx.fillStyle=carColor;
+  // tyres
+  ctx.fillStyle='#101217';
+  roundRect(-72,-4,18,56,7);ctx.fill();roundRect(54,-4,18,56,7);ctx.fill();
+  ctx.fillStyle='#2c3139';
+  roundRect(-69,1,12,46,5);ctx.fill();roundRect(57,1,12,46,5);ctx.fill();
+
+  // body shell inspired by the reference sports car rear view
+  ctx.shadowColor='#000a';ctx.shadowBlur=18;ctx.shadowOffsetY=10;
+  ctx.fillStyle=bodyGrad;
   ctx.beginPath();
-  ctx.moveTo(-58,37);ctx.quadraticCurveTo(-68,26,-62,-7);
-  ctx.lineTo(-50,-31);ctx.quadraticCurveTo(-39,-53,-23,-61);
-  ctx.quadraticCurveTo(0,-70,23,-61);ctx.quadraticCurveTo(39,-53,50,-31);
-  ctx.lineTo(62,-7);ctx.quadraticCurveTo(68,26,58,37);
-  ctx.quadraticCurveTo(38,48,0,50);ctx.quadraticCurveTo(-38,48,-58,37);ctx.closePath();ctx.fill();
-  ctx.shadowColor='transparent';ctx.strokeStyle='#ffffffb8';ctx.lineWidth=2.5;ctx.stroke();
+  ctx.moveTo(-63,39);ctx.quadraticCurveTo(-76,23,-70,-6);
+  ctx.lineTo(-59,-26);ctx.quadraticCurveTo(-50,-47,-29,-60);
+  ctx.quadraticCurveTo(0,-74,29,-60);ctx.quadraticCurveTo(50,-47,59,-26);
+  ctx.lineTo(70,-6);ctx.quadraticCurveTo(76,23,63,39);
+  ctx.quadraticCurveTo(38,52,0,54);ctx.quadraticCurveTo(-38,52,-63,39);ctx.closePath();ctx.fill();
+  ctx.shadowColor='transparent';ctx.strokeStyle='#ffffff8a';ctx.lineWidth=2.2;ctx.stroke();
 
-  // Roof and rear window make the silhouette read immediately as a car.
-  const trim=carColor==='#151820'?'#d82731':'#17191e';
-  ctx.fillStyle=trim;ctx.beginPath();ctx.moveTo(-31,-54);ctx.quadraticCurveTo(0,-72,31,-54);ctx.lineTo(37,-31);ctx.lineTo(-37,-31);ctx.closePath();ctx.fill();
-  ctx.fillStyle='#7ab4cf';ctx.beginPath();ctx.moveTo(-29,-49);ctx.quadraticCurveTo(0,-61,29,-49);ctx.lineTo(33,-31);ctx.lineTo(-33,-31);ctx.closePath();ctx.fill();
-  ctx.strokeStyle='#23313a';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(0,-59);ctx.lineTo(0,-31);ctx.stroke();
+  // bumper side arches
+  ctx.fillStyle=shadeHex(pal.base,-14);
+  ctx.beginPath();ctx.moveTo(-64,26);ctx.quadraticCurveTo(-71,28,-68,39);ctx.lineTo(-54,40);ctx.quadraticCurveTo(-58,33,-56,26);ctx.closePath();ctx.fill();
+  ctx.beginPath();ctx.moveTo(64,26);ctx.quadraticCurveTo(71,28,68,39);ctx.lineTo(54,40);ctx.quadraticCurveTo(58,33,56,26);ctx.closePath();ctx.fill();
 
-  // Spoiler, boot and number plate
-  ctx.fillStyle='#15161b';roundRect(-65,-22,130,10,4);ctx.fill();ctx.fillRect(-47,-14,7,13);ctx.fillRect(40,-14,7,13);
-  ctx.fillStyle=shadeHex(carColor,-18);roundRect(-56,-1,112,35,12);ctx.fill();
+  // roof / rear glass
+  ctx.fillStyle=darkGrad;
+  if(selectedModel==='supraR'){
+    ctx.beginPath();ctx.moveTo(-46,-61);ctx.quadraticCurveTo(0,-83,46,-61);ctx.lineTo(53,-39);ctx.lineTo(-53,-39);ctx.closePath();ctx.fill();
+  }else{
+    ctx.beginPath();ctx.moveTo(-44,-56);ctx.quadraticCurveTo(0,-74,44,-56);ctx.lineTo(49,-37);ctx.lineTo(-49,-37);ctx.closePath();ctx.fill();
+  }
+  const glassGrad=ctx.createLinearGradient(0,-54,0,-18);glassGrad.addColorStop(0,'#0b1d32');glassGrad.addColorStop(.55,pal.glass);glassGrad.addColorStop(1,'#1c3b51');
+  ctx.fillStyle=glassGrad;
+  ctx.beginPath();ctx.moveTo(-40,-53);ctx.quadraticCurveTo(0,-67,40,-53);ctx.lineTo(47,-37);ctx.lineTo(-47,-37);ctx.closePath();ctx.fill();
+  ctx.strokeStyle='#bed8eb66';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(-11,-55);ctx.lineTo(11,-55);ctx.stroke();
 
-  // Tail lamps
-  ctx.fillStyle='#ff2633';roundRect(-49,7,29,12,4);ctx.fill();roundRect(20,7,29,12,4);ctx.fill();
-  ctx.fillStyle='#ff8b91';roundRect(-45,9,10,4,2);ctx.fill();roundRect(35,9,10,4,2);ctx.fill();
+  // spoiler options same size
+  ctx.fillStyle=shadeHex(pal.trim,5);
+  if(selectedModel==='supraR'){
+    roundRect(-58,-72,116,8,4);ctx.fill();ctx.fillRect(-50,-64,7,20);ctx.fill();ctx.fillRect(43,-64,7,20);ctx.fill();
+    ctx.fillStyle=shadeHex(pal.trim,14);roundRect(-62,-75,124,5,3);ctx.fill();
+  }else{
+    roundRect(-48,-61,96,8,4);ctx.fill();ctx.fillRect(-38,-53,6,10);ctx.fill();ctx.fillRect(32,-53,6,10);ctx.fill();
+  }
 
-  // Plate and JPJ badge
-  ctx.fillStyle='#f5f4e9';roundRect(-23,22,46,13,3);ctx.fill();ctx.fillStyle='#151515';ctx.font='900 9px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('JPJ 01',0,28.5);
-  ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(0,-4,8,0,Math.PI*2);ctx.fill();ctx.fillStyle='#173f5c';ctx.font='900 7px Arial';ctx.fillText('JPJ',0,-4);
+  // boot lid / number plate panel
+  ctx.fillStyle=shadeHex(pal.base,-18);roundRect(-54,0,108,36,13);ctx.fill();
+  ctx.fillStyle=shadeHex(pal.base,12);ctx.fillRect(-50,0,100,4);
 
-  // Rear bumper/diffuser and twin exhausts
-  ctx.fillStyle='#15161b';ctx.beginPath();ctx.moveTo(-55,34);ctx.lineTo(55,34);ctx.lineTo(45,49);ctx.lineTo(-45,49);ctx.closePath();ctx.fill();
-  ctx.fillStyle='#85878a';ctx.beginPath();ctx.arc(-32,42,6,0,Math.PI*2);ctx.arc(32,42,6,0,Math.PI*2);ctx.fill();
+  // tail light clusters inspired by reference
+  const lightY=11;
+  function tailCluster(side){
+    const sx=side<0?-38:38;
+    const lightColors=side<0?['#ffb34d','#ff3348','#ff3348','#d9e0e7']:['#d9e0e7','#ff3348','#ff3348','#ffb34d'];
+    for(let i=0;i<4;i++){
+      const dx=(i-1.5)*12;
+      ctx.fillStyle='#15171a';ctx.beginPath();ctx.arc(sx+dx,lightY,6.8,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle=lightColors[i];ctx.beginPath();ctx.arc(sx+dx,lightY,5.1,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,.35)';ctx.beginPath();ctx.arc(sx+dx-1.5,lightY-1.5,1.8,0,Math.PI*2);ctx.fill();
+    }
+  }
+  tailCluster(-1); tailCluster(1);
 
-  // Brake glow
-  if(game.brake){ctx.fillStyle='#ff4b55aa';ctx.beginPath();ctx.ellipse(-34,15,23,10,0,0,Math.PI*2);ctx.ellipse(34,15,23,10,0,0,Math.PI*2);ctx.fill()}
+  // center brake lamp
+  ctx.fillStyle='#d7dbdf';roundRect(-14,-29,28,6,3);ctx.fill();
+  ctx.fillStyle='#f04551';roundRect(-11,-28,22,3,2);ctx.fill();
+
+  // plate recess + plate
+  ctx.fillStyle='#121418';roundRect(-24,19,48,18,4);ctx.fill();
+  ctx.fillStyle='#f3f2e7';roundRect(-21,21,42,14,3);ctx.fill();
+  ctx.fillStyle='#1a1e25';ctx.font='900 8px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('JPJ 01',0,28);
+
+  // diffuser and fins
+  ctx.fillStyle='#0f1218';ctx.beginPath();ctx.moveTo(-58,36);ctx.lineTo(58,36);ctx.lineTo(48,52);ctx.lineTo(-48,52);ctx.closePath();ctx.fill();
+  ctx.fillStyle='#1f252d';for(const fx of [-26,-8,8,26]){ctx.beginPath();ctx.moveTo(fx,37);ctx.lineTo(fx+4,51);ctx.lineTo(fx-4,51);ctx.closePath();ctx.fill();}
+
+  // big exhaust left
+  ctx.fillStyle='#7d8389';ctx.beginPath();ctx.ellipse(-40,40,11,8,0,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#20262e';ctx.beginPath();ctx.ellipse(-40,40,7,5,0,0,Math.PI*2);ctx.fill();
+
+  if(game.brake){ctx.fillStyle='rgba(255,74,88,.24)';ctx.beginPath();ctx.ellipse(-36,13,24,10,0,0,Math.PI*2);ctx.ellipse(36,13,24,10,0,0,Math.PI*2);ctx.fill()}
 
   ctx.restore();
-  return{x,y,w:142*s,h:112*s};
+  return{x,y,w:150*s,h:118*s};
 }
 function roundRect(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r);return ctx}
 
@@ -562,6 +622,13 @@ function update(dt){
   game.targetSpeed=clamp(game.targetSpeed,0,game.maxSpeed+boostExtra);
   game.speed=lerp(game.speed,game.targetSpeed,Math.min(1,dt*20));
   game.bestSpeed=Math.max(game.bestSpeed,game.speed);
+  const dashSpeedNow=Math.round(clamp((game.speed/Math.max(1,game.maxSpeed))*game.dashboardMax,0,game.dashboardMax+18));
+  const postedLimit=TRACKS[selectedTrack].limit;
+  if(dashSpeedNow>postedLimit){
+    if(!game.speedWarning){showToast(`⚠ HAD LAJU ${postedLimit} km/j`);beep(310,.08,'square',.028);beep(220,.12,'sawtooth',.020,.06)}
+    game.speedWarning=true;
+    game.safety=clamp(game.safety-dt*1.1,0,100);
+  }else game.speedWarning=false;
 
   const steer=(game.left?-1:0)+(game.right?1:0);
   const steerPower=1.85+Math.min(2.8,game.speed/400);
@@ -635,7 +702,7 @@ function getDashboardSpeed(){
   if(!game.running) return 0;
   const ratio=clamp(game.speed/Math.max(1,game.maxSpeed),0,1);
   const scaled=ratio*game.dashboardMax;
-  return Math.round(clamp(scaled,0,game.dashboardMax));
+  return Math.round(clamp(scaled,0,game.dashboardMax+16));
 }
 function updateHUD(){
   const dashSpeed=getDashboardSpeed();
@@ -646,10 +713,18 @@ function updateHUD(){
   $('#coinText').innerHTML='⭐ '+game.coins+' · 🧠 '+game.lessonCorrect+'/'+LESSONS.length+' · 🚗 '+game.safeOvertakes;
   const leftMs=Math.max(0,game.nextLessonMs-game.activePlayMs);
   const totalSec=Math.ceil(leftMs/1000), mm=Math.floor(totalSec/60), ss=String(totalSec%60).padStart(2,'0');
-  $('#mission').innerHTML=game.lessonIndex>=LESSONS.length?'Misi: <strong>Semua 10 soalan selesai!</strong>':`Misi: <strong>Kumpul bintang & potong selamat</strong> · Soalan seterusnya ${mm}:${ss}`;
+  const limit=TRACKS[selectedTrack].limit;
+  const missionEl=$('#mission');
+  missionEl.classList.toggle('warn', dashSpeed>limit);
+  missionEl.innerHTML=game.lessonIndex>=LESSONS.length
+    ? 'Misi: <strong>Semua 10 soalan selesai!</strong>'
+    : dashSpeed>limit
+      ? `⚠️ Had laju kawasan ini <strong>${limit} km/j</strong> · Kurangkan kelajuan! · Soalan seterusnya ${mm}:${ss}`
+      : `Misi: <strong>Kumpul bintang & potong selamat</strong> · Had laju ${limit} km/j · Soalan seterusnya ${mm}:${ss}`;
   $('#boostPct').textContent=Math.round(game.boost)+'%';
   const gear=dashSpeed<3?'N':Math.min(6,Math.max(1,Math.ceil(dashSpeed/24)));
   $('#gearText').textContent=!game.running?'Gear N · Tekan MINYAK':'Gear '+gear+' · Tekan MINYAK untuk memecut';
+  $('#trackText').textContent=TRACKS[selectedTrack].name+' · Had '+limit;
 }
 function showToast(text){const t=$('#toast');t.textContent=text;t.classList.add('show');clearTimeout(showToast.t);showToast.t=setTimeout(()=>t.classList.remove('show'),750)}
 
@@ -663,7 +738,7 @@ function enterAndroidGameMode(){
   }catch(e){}
 }
 
-function startGame(){game.startedAt=performance.now();const name=$('#playerName').value.trim();if(!name){showOverlay('<h2>Nama diperlukan</h2><p>Masukkan nama peserta dahulu sebelum mula.</p><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">OK</button></div>');return}enterAndroidGameMode();ensureAudio();game.running=false;game.paused=false;game.speed=0;game.targetSpeed=0;game.maxSpeed=Number($('#speedLimit').value);const speedOpt=$('#speedLimit').selectedOptions[0];game.dashboardMax=Number(speedOpt?.dataset?.dash||120);game.laps=1;game.lap=1;game.distance=0;game.score=0;game.coins=0;game.overtakes=0;game.safeOvertakes=0;game.unsafePasses=0;game.safety=100;game.lessonIndex=0;game.lessonCorrect=0;game.activePlayMs=0;game.questionIntervalMs=60000;game.nextLessonMs=game.questionIntervalMs;game.quizActive=false;game.carX=0;game.carVX=0;game.trackPos=0;game.roadScroll=0;game.worldTravel=0;game.objects=[];game.spawn=0;game.boost=100;game.clean=true;game.bestSpeed=0;game.crash=0;$('#trackText').textContent=TRACKS[selectedTrack].name;$('#lapMaxText').textContent=LESSONS.length;menuScreen.classList.remove('active');gameScreen.classList.add('active');resize();startMusic();startEngine();updateHUD();countdownStart()}
+function startGame(){game.startedAt=performance.now();const name=$('#playerName').value.trim();if(!name){showOverlay('<h2>Nama diperlukan</h2><p>Masukkan nama peserta dahulu sebelum mula.</p><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">OK</button></div>');return}enterAndroidGameMode();ensureAudio();game.running=false;game.paused=false;game.speed=0;game.targetSpeed=0;game.maxSpeed=Number($('#speedLimit').value);const speedOpt=$('#speedLimit').selectedOptions[0];game.dashboardMax=Number(speedOpt?.dataset?.dash||120);game.laps=1;game.lap=1;game.distance=0;game.score=0;game.coins=0;game.overtakes=0;game.safeOvertakes=0;game.unsafePasses=0;game.safety=100;game.lessonIndex=0;game.lessonCorrect=0;game.activePlayMs=0;game.questionIntervalMs=45000;game.nextLessonMs=game.questionIntervalMs;game.quizActive=false;game.carX=0;game.carVX=0;game.trackPos=0;game.roadScroll=0;game.worldTravel=0;game.objects=[];game.spawn=0;game.boost=100;game.clean=true;game.bestSpeed=0;game.crash=0;$('#trackText').textContent=TRACKS[selectedTrack].name+' · Had '+TRACKS[selectedTrack].limit;$('#lapMaxText').textContent=LESSONS.length;menuScreen.classList.remove('active');gameScreen.classList.add('active');resize();startMusic();startEngine();updateHUD();countdownStart()}
 function countdownStart(){const c=$('#countdown'),t=$('#countText');c.classList.add('show');let n=3;t.textContent=n;beep(520,.08,'square',.05);const id=setInterval(()=>{n--;if(n>0){t.textContent=n;beep(520,.08,'square',.05)}else if(n===0){t.textContent='GO!';beep(950,.12,'triangle',.07)}else{clearInterval(id);c.classList.remove('show');game.targetSpeed=0;game.speed=0;lastShiftGear=0;game.running=true;game.last=performance.now();cancelAnimationFrame(game.raf);game.raf=requestAnimationFrame(frame)}},700)}
 
 function finishGame(){
@@ -676,7 +751,7 @@ function finishGame(){
 
 function saveRanking(score){const key='jpjStreetDriveRank';let a=[];try{a=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}a.push({name:$('#playerName').value.trim(),score,track:selectedTrack,safe:game.safeOvertakes,learn:game.lessonCorrect,stars:game.coins,ts:Date.now()});a.sort((x,y)=>y.score-x.score||x.ts-y.ts);try{localStorage.setItem(key,JSON.stringify(a.slice(0,50)))}catch(e){}}
 function showRanking(){let a=[];try{a=JSON.parse(localStorage.getItem('jpjStreetDriveRank')||'[]')}catch(e){}showOverlay(`<div style="font-size:48px">🏆</div><h2>Ranking</h2><div class="rankList">${a.length?a.slice(0,15).map((r,i)=>`<div class="rankRow"><div class="rankPos">${i+1}</div><div><div class="rankName">${escapeHtml(r.name)}</div><div class="rankMeta">${TRACKS[r.track]?.name||r.track} · ⭐ ${r.stars??0} · 🚗 ${r.safe??0} · 🧠 ${r.learn??0}/10</div></div><div class="rankScore">${r.score}</div></div>`).join(''):'<p>Belum ada rekod.</p>'}</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">Tutup</button></div>`)}
-function showHow(){showOverlay(`<div style="font-size:54px">🎮</div><h2>Cara Main</h2><p>Tekan dan tahan <b>⛽ MINYAK</b> untuk memecut. Dashboard hanya memaparkan skala biasa <b>90 / 120 / 140 km/j</b>, tetapi pergerakan game dipertingkatkan supaya kereta terasa sangat laju. Gunakan KIRI/KANAN untuk mengelak dan memotong kereta. Kumpul <b>⭐ Bintang Pintar +5</b>. Kira-kira setiap <b>1 minit</b>, satu soalan JPJ akan muncul. Ada <b>10 soalan</b> keselamatan jalan raya.</p><div class="resultLesson"><b>Nilai pembelajaran:</b><br>🚦 faham lampu isyarat<br>🛑 kenal tindakan di tanda jalan<br>🪖 amalan topi keledar dan tali pinggang<br>🚸 keselamatan pejalan kaki dan kawasan sekolah</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">Faham</button></div>`) }
+function showHow(){showOverlay(`<div style="font-size:54px">🎮</div><h2>Cara Main</h2><p>Tekan dan tahan <b>⛽ MINYAK</b> untuk memecut. Anda boleh pilih <b>model kereta</b> dan <b>warna metallic</b>. Dashboard hanya memaparkan skala biasa <b>90 / 120 / 140 km/j</b>, tetapi pergerakan game dipertingkatkan supaya kereta terasa sangat laju. Gunakan KIRI/KANAN untuk mengelak dan memotong kereta. Kumpul <b>⭐ Bintang Pintar +5</b>. Kira-kira setiap <b>45 saat</b>, satu soalan JPJ akan muncul. Ada <b>10 soalan</b> keselamatan jalan raya.</p><div class="resultLesson"><b>Nilai pembelajaran:</b><br>🚦 faham lampu isyarat<br>🛑 kenal tindakan di tanda jalan<br>🪖 amalan topi keledar dan tali pinggang<br>🚸 keselamatan pejalan kaki dan kawasan sekolah</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">Faham</button></div>`) }
 function showOverlay(html){$('#overlayCard').innerHTML=html;$('#overlay').classList.add('show')}function closeOverlay(){$('#overlay').classList.remove('show')}window.closeOverlay=closeOverlay;window.startGame=startGame;
 function backToMenu(){closeOverlay();game.running=false;game.paused=false;cancelAnimationFrame(game.raf);stopEngine();stopMusic();gameScreen.classList.remove('active');menuScreen.classList.add('active')}window.backToMenu=backToMenu;
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
