@@ -4,7 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
 <meta name="theme-color" content="#101010" />
-<title>JPJ Safe Overtake Challenge</title>
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>JPJ Junior Drive — Misi Keselamatan Jalan Raya</title>
 <style>
 :root{
   --bg:#0a0a0d;--panel:#14151a;--panel2:#1c1e25;--red:#ef2b2d;--red2:#b90f16;
@@ -50,6 +53,53 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
 
 @media(max-width:520px){.valueStrip{grid-template-columns:1fr}.trackGrid{grid-template-columns:1fr}.trackBtn{min-height:74px;display:grid;grid-template-columns:48px 1fr;column-gap:8px;align-items:center}.trackBtn .ico{grid-row:1/3}.trackBtn b{margin:0}.trackBtn small{margin:0}.optionRow{grid-template-columns:1fr 1fr}.ctrl{width:68px;height:68px}.boost{width:58px;height:58px}.hudBig{font-size:17px}}
 @media(orientation:landscape) and (max-height:560px){#menuScreen{padding-top:8px}.menuWrap{width:min(100%,980px)}.logoBadge{width:72px;height:72px;font-size:38px}.logoRow h1{font-size:34px;margin:8px 0 4px}.card{margin-top:9px;padding:11px}.trackGrid{grid-template-columns:repeat(3,1fr)}.trackBtn{min-height:78px;display:block}.trackBtn .ico{font-size:24px}.trackBtn b{margin-top:2px}.ctrl{width:62px;height:62px;border-radius:20px}.mission{top:64px}.hudBox{min-height:45px}.hudBig{font-size:16px}.pauseBtn,.soundBtn{transform:translateY(52px)}}
+
+
+/* ANDROID PORTRAIT — susun atur khusus telefon */
+@supports (height:100dvh){html,body,#app,.screen{height:100dvh;min-height:100dvh}}
+@media (max-width:600px) and (orientation:portrait){
+  #menuScreen{padding:calc(10px + env(safe-area-inset-top)) 12px calc(14px + env(safe-area-inset-bottom));}
+  .menuWrap{width:100%;justify-content:flex-start;min-height:auto;padding-top:4px}
+  .logoRow{margin-bottom:5px}.logoBadge{width:76px;height:76px;border-radius:23px;font-size:40px;box-shadow:0 12px 30px #ef2b2d42}
+  h1{font-size:31px;line-height:1;margin:9px 0 4px;letter-spacing:-1px}.tagline{font-size:12px;line-height:1.35}
+  .card{margin-top:9px;padding:12px;border-radius:20px}.nameInput{height:46px;border-radius:14px}
+  .sectionLabel{font-size:11px;margin-bottom:7px}.trackGrid{grid-template-columns:repeat(3,1fr);gap:7px}
+  .trackBtn{min-height:87px!important;display:block!important;padding:9px 7px;text-align:center;border-radius:15px}.trackBtn .ico{font-size:27px!important}.trackBtn b{font-size:11px;margin-top:4px!important}.trackBtn small{display:none}
+  .optionRow{grid-template-columns:1fr 1fr;gap:7px}.opt select{height:42px;border-radius:12px;font-size:12px}.opt label{font-size:9px}
+  .carColors{gap:8px}.carColor{width:39px;height:39px;border-radius:12px}.playBtn{min-height:52px;margin-top:10px;border-radius:15px;font-size:16px}.menuActions{gap:7px;margin-top:7px}.secondary{min-height:42px;font-size:12px}
+  .valueStrip{display:none}
+
+  #gameScreen{height:100dvh;min-height:100dvh}
+  #gameCanvas{height:100dvh}
+  .hud{inset:calc(7px + env(safe-area-inset-top)) 7px auto 7px;grid-template-columns:1.05fr .9fr 1.05fr;gap:5px}
+  .hudBox{min-height:48px;padding:6px 7px;border-radius:12px}.hudLabel{font-size:7px;letter-spacing:.35px}.hudBig{font-size:15px}.hudSmall{font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.speedHud .unit{font-size:7px}
+  .mission{top:calc(62px + env(safe-area-inset-top));width:calc(100% - 86px);max-width:none;padding:6px 9px;font-size:9px;line-height:1.2;border-radius:12px}
+  .pauseBtn,.soundBtn{top:calc(60px + env(safe-area-inset-top));width:36px;height:36px;border-radius:11px;font-size:15px;transform:none}.pauseBtn{right:7px}.soundBtn{left:7px}
+
+  .controls{bottom:calc(10px + env(safe-area-inset-bottom));padding:0 9px;align-items:end}
+  .steerPad{display:grid;grid-template-columns:repeat(2,62px);gap:7px;align-items:end}
+  .pedalPad{display:grid;grid-template-columns:58px 70px;grid-template-rows:58px 70px;gap:7px;align-items:end}
+  .ctrl{width:62px;height:62px;border-radius:19px;font-size:24px;box-shadow:0 7px 17px #0009,inset 0 -5px 0 #0004}
+  .boost{grid-column:1;grid-row:1;width:58px;height:58px;border-radius:18px;align-self:auto;font-size:9px}
+  .brake{grid-column:1;grid-row:2;width:58px;height:70px;border-radius:18px;font-size:10px}
+  .gas{grid-column:2;grid-row:1/3;width:70px;height:135px;border-radius:24px;font-size:13px;letter-spacing:.2px;background:linear-gradient(#42df88,#14864a);border-color:#92ffc1aa;box-shadow:0 9px 22px #0009,inset 0 -7px 0 #0a5b36}
+  .gas .steerLabel{font-size:9px;margin-top:5px;color:#eafff2}.steerLabel{font-size:8px}
+  /* Paparan soalan Android dibesarkan supaya mudah dibaca */
+  .overlay{padding:9px}.overlayCard{width:min(calc(100vw - 18px),430px);max-height:92dvh;overflow:auto;padding:20px 18px;border-radius:22px}
+  .overlayCard h2{font-size:26px;line-height:1.15;margin:8px 0 10px}.overlayCard p{font-size:14px;line-height:1.5}
+    .lessonTag{font-size:14px;padding:8px 12px}.quizQ{font-size:23px;line-height:1.42;padding:20px 17px;margin:15px 0;border-radius:19px;text-align:center}
+  .quizAnswers{gap:12px}.quizAnswer{min-height:68px;font-size:19px;line-height:1.35;padding:15px 16px;border-radius:17px}.quizAnswer b{font-size:20px;margin-right:6px}
+  .ovBtn{height:50px;font-size:14px}
+  .toast{top:34%;font-size:12px}
+}
+
+/* Telefon Android rendah / kecil */
+@media (max-width:380px) and (orientation:portrait){
+  .steerPad{grid-template-columns:repeat(2,56px)}.ctrl{width:56px;height:58px}.pedalPad{grid-template-columns:52px 64px;grid-template-rows:52px 64px}.boost{width:52px;height:52px}.brake{width:52px;height:64px}.gas{width:64px;height:123px}
+  .mission{width:calc(100% - 80px);font-size:8px}.hudBig{font-size:14px}.trackBtn{min-height:81px!important}
+  .overlayCard{padding:17px 14px}.overlayCard h2{font-size:25px}.quizQ{font-size:20px;padding:16px 13px}.quizAnswer{min-height:62px;font-size:17px;padding:13px}.lessonTag{font-size:12px}
+}
+
 </style>
 </head>
 <body>
@@ -57,9 +107,9 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
   <section id="menuScreen" class="screen active">
     <div class="menuWrap">
       <div class="logoRow">
-        <div class="logoBadge">🏎️</div>
-        <h1>JPJ Safe Overtake</h1>
-        <p class="tagline">Permainan pemanduan berasaskan keselamatan jalan raya — potong secara selamat, kumpul Lencana Selamat dan jawab misi ilmu.</p>
+        <div class="logoBadge">🚗</div>
+        <h1>JPJ Junior Drive</h1>
+        <p class="tagline">Main kereta JPJ dengan lebih laju sambil belajar keselamatan jalan raya. Kumpul mata, potong dengan selamat dan jawab 10 Misi JPJ!</p>
       </div>
 
       <div class="card">
@@ -78,8 +128,8 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
 
       <div class="card">
         <div class="optionRow">
-          <div class="opt"><label>Had kelajuan</label><select id="speedLimit"><option value="200">200 km/j</option><option value="260" selected>260 km/j</option><option value="320">320 km/j</option></select></div>
-          <div class="opt"><label>Bilangan lap</label><select id="lapCount"><option value="1">1 lap</option><option value="3" selected>3 lap</option><option value="5">5 lap</option></select></div>
+          <div class="opt"><label>Kelajuan dashboard</label><select id="speedLimit"><option value="540" data-dash="90">90 km/j</option><option value="800" data-dash="120" selected>120 km/j</option><option value="2500" data-dash="140">140 km/j</option></select></div>
+          <div class="opt"><label>Misi JPJ</label><select id="lapCount"><option value="10" selected>10 soalan · ±1 min/soalan</option></select></div>
         </div>
         <div class="sectionLabel" style="margin-top:14px">Warna kereta</div>
         <div class="carColors">
@@ -91,11 +141,11 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
       </div>
 
       <div class="valueStrip">
-        <div class="valueChip"><span>🚗</span>Potong hanya bila lorong selamat</div>
-        <div class="valueChip"><span>🛡️</span>Jaga Meter Keselamatan</div>
-        <div class="valueChip"><span>🧠</span>5 Misi Ilmu Jalan Raya</div>
+        <div class="valueChip"><span>🚦</span>Kenal lampu isyarat</div>
+        <div class="valueChip"><span>🛑</span>Faham tanda jalan</div>
+        <div class="valueChip"><span>🛡️</span>Amalan pengguna jalan selamat</div>
       </div>
-      <button id="playBtn" class="playBtn">▶ MULAKAN MISI JPJ</button>
+      <button id="playBtn" class="playBtn">▶ MULA MISI JPJ</button>
       <div class="menuActions"><button id="rankBtn" class="secondary">🏆 Ranking</button><button id="howBtn" class="secondary">🎮 Cara Main</button></div>
     </div>
   </section>
@@ -103,11 +153,11 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
   <section id="gameScreen" class="screen">
     <canvas id="gameCanvas"></canvas>
     <div class="hud">
-      <div class="hudBox speedHud"><div class="hudLabel">Kelajuan</div><div class="hudBig"><span id="speedText">0</span><span class="unit">km/j</span></div><div id="gearText" class="hudSmall">Gear N · Tekan GAS</div></div>
-      <div class="hudBox center"><div class="hudLabel">Lap</div><div class="hudBig"><span id="lapText">1</span>/<span id="lapMaxText">3</span></div><div id="trackText" class="hudSmall">Bandar</div></div>
-      <div class="hudBox right"><div class="hudLabel">Markah</div><div id="scoreText" class="hudBig">0</div><div id="coinText" class="hudSmall">🛡️ 100% · 🎓 0/5</div></div>
+      <div class="hudBox speedHud"><div class="hudLabel">Kelajuan</div><div class="hudBig"><span id="speedText">0</span><span class="unit">km/j</span></div><div id="gearText" class="hudSmall">Gear N · Tekan MINYAK</div></div>
+      <div class="hudBox center"><div class="hudLabel">Soalan</div><div class="hudBig"><span id="lapText">0</span>/<span id="lapMaxText">10</span></div><div id="trackText" class="hudSmall">Bandar</div></div>
+      <div class="hudBox right"><div class="hudLabel">Markah</div><div id="scoreText" class="hudBig">0</div><div id="coinText" class="hudSmall">⭐ 0 · 🧠 0/10</div></div>
     </div>
-    <div id="mission" class="mission">Misi: <strong>Potong dengan selamat</strong> · trafik dikurangkan supaya anda boleh memilih ruang, kumpul lencana dan belajar.</div>
+    <div id="mission" class="mission">Misi: <strong>Kumpul mata & potong selamat</strong> · soalan JPJ akan muncul kira-kira setiap 1 minit.</div>
     <button id="soundBtn" class="soundBtn">🔊</button>
     <button id="pauseBtn" class="pauseBtn">⏸</button>
 
@@ -119,7 +169,7 @@ h1{font-size:clamp(32px,8vw,58px);line-height:.98;margin:14px 0 6px;letter-spaci
       <div class="pedalPad">
         <button id="boostBtn" class="ctrl boost">BOOST<br><span id="boostPct">100%</span></button>
         <button id="brakeBtn" class="ctrl brake">BRAKE</button>
-        <button id="gasBtn" class="ctrl gas">GAS<br><span class="steerLabel">ACCEL</span></button>
+        <button id="gasBtn" class="ctrl gas">⛽ MINYAK<br><span class="steerLabel">PECUT</span></button>
       </div>
     </div>
 
@@ -145,11 +195,16 @@ const TRACKS={
 };
 
 const LESSONS=[
- {icon:"🚸",title:"Lintasan pejalan kaki",q:"Ada pejalan kaki hendak melintas di lintasan. Apakah tindakan paling selamat?",a:["Tambah laju supaya cepat lepas","Perlahankan atau berhenti dan beri laluan","Bunyikan hon dan teruskan"],correct:1,tip:"Di lintasan pejalan kaki, utamakan keselamatan pengguna yang sedang atau hendak melintas."},
- {icon:"🪞",title:"Sebelum tukar lorong",q:"Sebelum menukar lorong untuk memotong, apakah pemeriksaan yang penting?",a:["Cermin, isyarat dan pastikan ruang lorong selamat","Terus masuk lorong sebelah jika kereta laju","Hanya lihat kereta di hadapan"],correct:0,tip:"Periksa cermin dan keadaan sekeliling, beri isyarat, kemudian tukar lorong hanya apabila selamat."},
- {icon:"⭕",title:"Had kelajuan",q:"Tanda had laju 60 km/j menunjukkan apa?",a:["Kelajuan minimum 60 km/j","Cadangan kelajuan sahaja","Kelajuan maksimum yang dibenarkan ialah 60 km/j"],correct:2,tip:"Had kelajuan ialah kelajuan maksimum yang dibenarkan; keadaan jalan mungkin memerlukan anda memandu lebih perlahan."},
- {icon:"🏫",title:"Kawasan sekolah",q:"Apabila melalui kawasan sekolah, apakah tindakan yang paling sesuai?",a:["Kurangkan kelajuan dan bersedia untuk berhenti","Pecut supaya tidak mengganggu trafik","Tukar lorong dengan kerap"],correct:0,tip:"Kawasan sekolah mempunyai risiko murid melintas secara tiba-tiba. Kurangkan kelajuan dan tingkatkan pemerhatian."},
- {icon:"↔️",title:"Jarak selamat",q:"Mengapa kita perlu mengekalkan jarak yang selamat dengan kenderaan di hadapan?",a:["Supaya mudah memotong dari jarak dekat","Supaya ada masa dan ruang untuk bertindak serta membrek","Supaya kereta belakang tidak memotong"],correct:1,tip:"Jarak yang selamat memberi masa untuk bertindak jika kenderaan di hadapan membrek atau berlaku bahaya."}
+ {icon:"🚦",title:"Lampu Isyarat",q:"Apakah tindakan apabila lampu isyarat MERAH?",a:["Berhenti","Tambah laju","Bunyikan hon"],correct:0,tip:"Lampu merah bermaksud berhenti dan tunggu sehingga selamat untuk bergerak semula."},
+ {icon:"🟡",title:"Lampu Kuning",q:"Apabila lampu isyarat bertukar KUNING, apakah tindakan paling selamat?",a:["Bersedia untuk berhenti","Pecut lebih laju","Tukar lorong terus"],correct:0,tip:"Lampu kuning memberi amaran supaya memperlahankan kenderaan dan bersedia untuk berhenti jika selamat."},
+ {icon:"🦺",title:"Tali Pinggang",q:"Apakah yang perlu dipakai apabila menaiki kereta?",a:["Tali pinggang keledar","Topi biasa","Beg sekolah"],correct:0,tip:"Tali pinggang keledar membantu melindungi penumpang jika berlaku membrek mengejut atau kemalangan."},
+ {icon:"🪖",title:"Topi Keledar",q:"Semasa menaiki motosikal, topi keledar perlu...",a:["Dipakai dan diikat kemas","Dipegang di tangan","Diletak di bakul"],correct:0,tip:"Topi keledar perlu dipakai dengan betul dan tali pengikat dikemaskan."},
+ {icon:"🚸",title:"Lintasan Pejalan Kaki",q:"Apabila menghampiri lintasan pejalan kaki, pemandu perlu...",a:["Perlahankan kenderaan dan beri laluan","Pecut dahulu","Berhenti di tengah lintasan"],correct:0,tip:"Pemandu perlu lebih berhati-hati dan memberi laluan kepada pejalan kaki yang melintas."},
+ {icon:"📵",title:"Telefon Semasa Memandu",q:"Apakah tindakan selamat berkaitan telefon ketika memandu?",a:["Jangan gunakan telefon ketika memandu","Balas mesej dengan cepat","Tonton video jika jalan kosong"],correct:0,tip:"Menggunakan telefon mengganggu tumpuan. Fokus perlu kekal pada jalan dan keadaan sekeliling."},
+ {icon:"↔️",title:"Tukar Lorong",q:"Sebelum menukar lorong, apakah yang patut dilakukan?",a:["Beri isyarat dan periksa keadaan sekeliling","Terus masuk lorong lain","Tekan hon sahaja"],correct:0,tip:"Beri isyarat lebih awal dan pastikan lorong yang hendak dimasuki benar-benar selamat."},
+ {icon:"🚗",title:"Jarak Selamat",q:"Mengapa kita perlu mengekalkan jarak dengan kenderaan di hadapan?",a:["Supaya ada ruang untuk membrek","Supaya lebih mudah rapat","Supaya boleh memotong pada bila-bila masa"],correct:0,tip:"Jarak yang mencukupi memberi masa dan ruang untuk bertindak jika kenderaan di hadapan membrek."},
+ {icon:"🏫",title:"Kawasan Sekolah",q:"Apakah sikap yang betul ketika memandu berhampiran kawasan sekolah?",a:["Perlahankan kenderaan dan lebih peka","Tambah laju supaya cepat lepas","Bunyikan hon tanpa henti"],correct:0,tip:"Kawasan sekolah mempunyai ramai kanak-kanak. Pemandu perlu memperlahankan kenderaan dan bersedia untuk berhenti."},
+ {icon:"🛑",title:"Tanda BERHENTI",q:"Apabila melihat tanda BERHENTI, apakah yang perlu dilakukan?",a:["Berhenti dahulu dan pastikan selamat","Teruskan jika tiada kereta","Pecut sebelum simpang"],correct:0,tip:"Tanda BERHENTI memerlukan kenderaan berhenti dahulu sebelum meneruskan perjalanan apabila keadaan selamat."}
 ];
 
 $$('.trackBtn').forEach(b=>b.onclick=()=>{$$('.trackBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedTrack=b.dataset.track});
@@ -163,9 +218,9 @@ function stopMusic(){if(musicTimer)clearInterval(musicTimer);musicTimer=null}
 function makeWind(a){const len=Math.max(1,Math.floor(a.sampleRate*.45)),buf=a.createBuffer(1,len,a.sampleRate),d=buf.getChannelData(0);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*.55;const src=a.createBufferSource(),hp=a.createBiquadFilter(),g=a.createGain();src.buffer=buf;src.loop=true;hp.type='highpass';hp.frequency.value=900;g.gain.value=.0001;src.connect(hp).connect(g).connect(a.destination);src.start();return{src,g}}
 function startEngine(){if(!audioEnabled)return;const a=ensureAudio();if(!a)return;stopEngine();engineFilter=a.createBiquadFilter();engineFilter.type='lowpass';engineFilter.frequency.value=1400;engineFilter.Q.value=.7;engineOsc=a.createOscillator();engineOsc2=a.createOscillator();engineGain=a.createGain();engineGain2=a.createGain();engineOsc.type='triangle';engineOsc2.type='sawtooth';engineOsc.frequency.value=88;engineOsc2.frequency.value=176;engineGain.gain.value=.024;engineGain2.gain.value=.0065;engineOsc.connect(engineGain).connect(engineFilter);engineOsc2.connect(engineGain2).connect(engineFilter);engineFilter.connect(a.destination);engineOsc.start();engineOsc2.start();const w=makeWind(a);windSource=w.src;windGain=w.g;beep(520,.055,'sine',.025);beep(760,.07,'triangle',.018,.055)}
 function stopEngine(){try{engineOsc?.stop()}catch(e){}try{engineOsc2?.stop()}catch(e){}try{windSource?.stop()}catch(e){}engineOsc=null;engineOsc2=null;engineGain=null;engineGain2=null;engineFilter=null;windSource=null;windGain=null}
-function updateEngine(speed){if(!AC||!engineOsc)return;const gear=speed<5?0:Math.min(7,Math.max(1,Math.ceil(speed/34)));const rpmBand=gear?((speed-(gear-1)*34)/34):0;const base=88+gear*12+rpmBand*95;engineOsc.frequency.setTargetAtTime(base,AC.currentTime,.035);engineOsc2.frequency.setTargetAtTime(base*2.02,AC.currentTime,.035);if(engineFilter)engineFilter.frequency.setTargetAtTime(1200+speed*8.5,AC.currentTime,.06);if(engineGain)engineGain.gain.setTargetAtTime(.020+Math.min(.014,speed/18000),AC.currentTime,.05);if(engineGain2)engineGain2.gain.setTargetAtTime(.0045+Math.min(.006,speed/35000),AC.currentTime,.05);if(windGain)windGain.gain.setTargetAtTime(Math.max(.0001,Math.min(.024,(speed-35)/9000)),AC.currentTime,.08);if(gear>0&&gear!==lastShiftGear&&lastShiftGear>0){beep(880+gear*70,.045,'square',.015)}lastShiftGear=gear}
+function updateEngine(speed){if(!AC||!engineOsc)return;const gear=speed<5?0:Math.min(8,Math.max(1,Math.ceil(speed/48)));const rpmBand=gear?((speed-(gear-1)*48)/48):0;const base=96+gear*15+rpmBand*110;engineOsc.frequency.setTargetAtTime(base,AC.currentTime,.035);engineOsc2.frequency.setTargetAtTime(base*2.02,AC.currentTime,.035);if(engineFilter)engineFilter.frequency.setTargetAtTime(1200+speed*8.5,AC.currentTime,.06);if(engineGain)engineGain.gain.setTargetAtTime(.020+Math.min(.014,speed/18000),AC.currentTime,.05);if(engineGain2)engineGain2.gain.setTargetAtTime(.0045+Math.min(.006,speed/35000),AC.currentTime,.05);if(windGain)windGain.gain.setTargetAtTime(Math.max(.0001,Math.min(.024,(speed-35)/9000)),AC.currentTime,.08);if(gear>0&&gear!==lastShiftGear&&lastShiftGear>0){beep(880+gear*70,.045,'square',.015)}lastShiftGear=gear}
 
-const game={running:false,paused:false,last:0,speed:0,targetSpeed:0,maxSpeed:260,cruiseSpeed:50,lap:1,laps:3,distance:0,score:0,coins:0,overtakes:0,safeOvertakes:0,unsafePasses:0,safety:100,lessonIndex:0,lessonCorrect:0,lessonGap:300,nextLessonAt:300,quizActive:false,carX:0,carVX:0,trackPos:0,roadScroll:0,worldTravel:0,objects:[],spawn:0,boost:100,usingBoost:false,left:false,right:false,gas:false,brake:false,crash:0,startedAt:0,bestSpeed:0,clean:true,raf:0};
+const game={running:false,paused:false,last:0,speed:0,targetSpeed:0,maxSpeed:800,dashboardMin:0,dashboardMax:120,cruiseSpeed:120,lap:1,laps:1,distance:0,score:0,coins:0,overtakes:0,safeOvertakes:0,unsafePasses:0,safety:100,lessonIndex:0,lessonCorrect:0,questionIntervalMs:60000,nextLessonMs:60000,activePlayMs:0,quizActive:false,carX:0,carVX:0,trackPos:0,roadScroll:0,worldTravel:0,objects:[],spawn:0,boost:100,usingBoost:false,left:false,right:false,gas:false,brake:false,crash:0,startedAt:0,bestSpeed:0,clean:true,raf:0};
 
 function resize(){const dpr=Math.min(2,window.devicePixelRatio||1);const r=canvas.getBoundingClientRect();canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}
 window.addEventListener('resize',resize);
@@ -369,7 +424,7 @@ function spawnObject(){
   game.objects.push({
     type,lane,
     z:type==='traffic'?rand(240,470):rand(150,390),
-    speed:type==='traffic'?rand(72,115):0,
+    speed:type==='traffic'?rand(game.maxSpeed*.46,game.maxSpeed*.70):0,
     color:['#3e8ef7','#f1c232','#ef5350','#fafafa','#2b2e34','#18a66c'][Math.floor(Math.random()*6)],
     hit:false,passed:false,approached:false
   });
@@ -460,7 +515,7 @@ function drawPlayerCar(w,h){
 }
 function roundRect(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r);return ctx}
 
-function collisionCheck(playerRect,w,h){for(const o of game.objects){if(o.hit)continue;const p=projectObject(o,w,h);if(p.depth<.80)continue;const ox=p.x,oy=p.y;const lanePx=Math.abs(ox-playerRect.x);const yDist=Math.abs(oy-playerRect.y);if(o.type==='coin'&&lanePx<55&&yDist<85){o.hit=true;game.coins++;game.score=clamp(game.score+5,0,9999);game.safety=clamp(game.safety+1,0,100);showToast('LENCANA SELAMAT +5');beep(1050,.06,'sine',.06);beep(1400,.08,'sine',.04,.05)}else if((o.type==='traffic'||o.type==='cone')&&lanePx<55&&yDist<82){o.hit=true;game.speed*=.86;const isTraffic=o.type==='traffic';game.score=Math.max(0,game.score-(isTraffic?10:4));game.safety=clamp(game.safety-(isTraffic?15:6),0,100);game.crash=.45;game.clean=false;showToast(isTraffic?'LANGGAR! -10 · Keselamatan turun':'KON! -4');beep(110,.18,'sawtooth',.06);if(navigator.vibrate)navigator.vibrate(90)}}}
+function collisionCheck(playerRect,w,h){for(const o of game.objects){if(o.hit)continue;const p=projectObject(o,w,h);if(p.depth<.80)continue;const ox=p.x,oy=p.y;const lanePx=Math.abs(ox-playerRect.x);const yDist=Math.abs(oy-playerRect.y);if(o.type==='coin'&&lanePx<55&&yDist<85){o.hit=true;game.coins++;game.score=clamp(game.score+5,0,9999);game.safety=clamp(game.safety+1,0,100);showToast('BINTANG PINTAR +5');beep(1050,.06,'sine',.06);beep(1400,.08,'sine',.04,.05)}else if((o.type==='traffic'||o.type==='cone')&&lanePx<55&&yDist<82){o.hit=true;game.speed*=.86;const isTraffic=o.type==='traffic';game.score=Math.max(0,game.score-(isTraffic?10:4));game.safety=clamp(game.safety-(isTraffic?15:6),0,100);game.crash=.45;game.clean=false;showToast(isTraffic?'LANGGAR! -10 · Keselamatan turun':'KON! -4');beep(110,.18,'sawtooth',.06);if(navigator.vibrate)navigator.vibrate(90)}}}
 
 function drawObjects(w,h){const sorted=[...game.objects].sort((a,b)=>b.z-a.z);for(const o of sorted){if(o.hit)continue;const p=projectObject(o,w,h);if(p.depth<=0||p.depth>=1.05)continue;if(o.type==='traffic')drawTrafficCar(p.x,p.y,p.scale*.95,o.color);else if(o.type==='coin')drawCoin(p.x,p.y,p.scale);else drawCone(p.x,p.y,p.scale*.95)}}
 
@@ -468,7 +523,7 @@ function triggerLesson(){
   if(game.lessonIndex>=LESSONS.length||game.quizActive)return;
   const L=LESSONS[game.lessonIndex];
   game.quizActive=true;game.paused=true;stopEngine();
-  showOverlay(`<div class="lessonTag">MISI ILMU ${game.lessonIndex+1}/${LESSONS.length}</div><div style="font-size:48px">${L.icon}</div><h2>${L.title}</h2><div class="quizQ">${L.q}</div><div class="quizAnswers">${L.a.map((x,i)=>`<button class="quizAnswer" onclick="answerLesson(${i})"><b>${String.fromCharCode(65+i)}.</b> ${x}</button>`).join('')}</div>`);
+  showOverlay(`<div class="lessonTag">MISI JPJ ${game.lessonIndex+1}/${LESSONS.length}</div><div style="font-size:72px;line-height:1.05">${L.icon}</div><h2>${L.title}</h2><div class="quizQ">${L.q}</div><div class="quizAnswers">${L.a.map((x,i)=>`<button class="quizAnswer" onclick="answerLesson(${i})"><b>${String.fromCharCode(65+i)}.</b> ${x}</button>`).join('')}</div>`);
 }
 function answerLesson(choice){
   if(!game.quizActive)return;
@@ -478,38 +533,39 @@ function answerLesson(choice){
   else{game.safety=clamp(game.safety-3,0,100);beep(180,.12,'sine',.04)}
   const result=correct?'✅ Betul! +15 markah':'❌ Belum tepat';
   game.lessonIndex++;
-  game.nextLessonAt+=game.lessonGap;
-  showOverlay(`<div style="font-size:52px">${correct?'🎓':'💡'}</div><h2>${result}</h2><div class="resultLesson"><b>Ilmu keselamatan:</b><br>${L.tip}</div><p>Kuiz betul: <b>${game.lessonCorrect}/${LESSONS.length}</b> · Meter keselamatan: <b>${Math.round(game.safety)}%</b></p><div class="overlayBtns"><button class="ovBtn primary" onclick="continueLesson()">Sambung Memandu</button></div>`);
+  game.nextLessonMs+=game.questionIntervalMs;
+  showOverlay(`<div style="font-size:52px">${correct?'🎓':'💡'}</div><h2>${result}</h2><div class="resultLesson"><b>Jom ingat:</b><br>${L.tip}</div><p>Jawapan betul: <b>${game.lessonCorrect}/${LESSONS.length}</b> · Bintang dikumpul: <b>${game.coins}</b></p><div class="overlayBtns"><button class="ovBtn primary" onclick="continueLesson()">${game.lessonIndex>=LESSONS.length?'Lihat Keputusan':'Sambung Memandu'}</button></div>`);
   updateHUD();
 }
-function continueLesson(){closeOverlay();game.quizActive=false;game.paused=false;game.last=performance.now();if(audioEnabled)startEngine()}window.answerLesson=answerLesson;window.continueLesson=continueLesson;
+function continueLesson(){closeOverlay();game.quizActive=false;if(game.lessonIndex>=LESSONS.length){finishGame();return}game.paused=false;game.last=performance.now();if(audioEnabled)startEngine()}window.answerLesson=answerLesson;window.continueLesson=continueLesson;
 
 function update(dt){
   if(!game.running||game.paused)return;
   const T=TRACKS[selectedTrack];
+  game.activePlayMs+=dt*1000;
 
   if(game.brake){
-    game.targetSpeed-=520*dt;
+    game.targetSpeed-=1350*dt;
   }else if(game.gas){
-    game.targetSpeed+=560*dt;
+    game.targetSpeed+=2200*dt;
   }else{
-    const cruise=Math.min(game.cruiseSpeed,game.maxSpeed*.22);
-    if(game.targetSpeed<cruise)game.targetSpeed+=32*dt;
-    else game.targetSpeed-=3.2*dt;
+    const cruise=Math.min(game.cruiseSpeed,game.maxSpeed*.24);
+    if(game.targetSpeed<cruise)game.targetSpeed+=95*dt;
+    else game.targetSpeed-=1.6*dt;
   }
 
   const boostActive=game.usingBoost&&game.boost>0;
-  const boostExtra=boostActive?120:0;
+  const boostExtra=boostActive?260:0;
   if(boostActive)game.boost=Math.max(0,game.boost-27*dt);
   else game.boost=Math.min(100,game.boost+12*dt);
 
   game.targetSpeed=clamp(game.targetSpeed,0,game.maxSpeed+boostExtra);
-  game.speed=lerp(game.speed,game.targetSpeed,Math.min(1,dt*18));
+  game.speed=lerp(game.speed,game.targetSpeed,Math.min(1,dt*20));
   game.bestSpeed=Math.max(game.bestSpeed,game.speed);
 
   const steer=(game.left?-1:0)+(game.right?1:0);
-  const steerPower=1.75+game.speed/170;
-  game.carVX=lerp(game.carVX,steer*steerPower,Math.min(1,dt*14));
+  const steerPower=1.85+Math.min(2.8,game.speed/400);
+  game.carVX=lerp(game.carVX,steer*steerPower,Math.min(1,dt*12));
   if(!steer)game.carVX=lerp(game.carVX,0,Math.min(1,dt*8));
   game.carX+=game.carVX*dt*1.12;
   game.carX=clamp(game.carX,-1.05,1.05);
@@ -523,10 +579,10 @@ function update(dt){
   game.distance+=metres;
   game.trackPos+=metres;
   game.worldTravel+=metres;
-  game.roadScroll=game.worldTravel*(1.12+Math.min(.52,game.speed/590));
+  game.roadScroll=game.worldTravel*(1.65+Math.min(1.05,game.speed/420));
 
   game.spawn+=metres;
-  const spawnEvery=selectedTrack==='coast'?105:selectedTrack==='hill'?88:96;
+  const spawnEvery=selectedTrack==='coast'?310:selectedTrack==='hill'?270:290;
   if(game.spawn>spawnEvery){
     game.spawn=0;
     spawnObject();
@@ -556,48 +612,71 @@ function update(dt){
   }
   game.objects=game.objects.filter(o=>o.z>-65&&!o.hit);
 
-  if(game.lessonIndex<LESSONS.length&&game.worldTravel>=game.nextLessonAt){triggerLesson();updateHUD();return}
+  if(game.lessonIndex<LESSONS.length&&game.activePlayMs>=game.nextLessonMs){triggerLesson();updateHUD();return}
 
   const lapDist=T.lapDistance;
   if(game.distance>=lapDist){
     game.distance-=lapDist;
-    if(game.lap>=game.laps){finishGame();return}
     game.lap++;
-    showToast('LAP '+game.lap+' / '+game.laps);
-    beep(650,.09,'triangle',.05);
-    beep(900,.12,'triangle',.05,.08);
+    showToast('PUSINGAN '+game.lap);
+    beep(650,.07,'triangle',.035);
   }
 
   if(game.crash>0)game.crash=Math.max(0,game.crash-dt);
   updateHUD();
-  updateEngine(game.speed);
+  updateEngine(getDashboardSpeed()*3.4);
 }
 
 function draw(){const w=canvas.clientWidth,h=canvas.clientHeight,T=TRACKS[selectedTrack];ctx.save();if(game.crash>0){ctx.translate(rand(-7,7)*game.crash,rand(-5,5)*game.crash)}drawBackground(w,h,T);drawRoad(w,h,T);drawObjects(w,h);const pr=drawPlayerCar(w,h);if(!game.paused&&!game.quizActive)collisionCheck(pr,w,h);ctx.restore()}
 
 function frame(now){const dt=Math.min(.034,(now-game.last)/1000||.016);game.last=now;update(dt);draw();game.raf=requestAnimationFrame(frame)}
 
+function getDashboardSpeed(){
+  if(!game.running) return 0;
+  const ratio=clamp(game.speed/Math.max(1,game.maxSpeed),0,1);
+  const scaled=ratio*game.dashboardMax;
+  return Math.round(clamp(scaled,0,game.dashboardMax));
+}
 function updateHUD(){
-  $('#speedText').textContent=Math.round(game.speed);
-  $('#lapText').textContent=game.lap;
-  $('#lapMaxText').textContent=game.laps;
+  const dashSpeed=getDashboardSpeed();
+  $('#speedText').textContent=dashSpeed;
+  $('#lapText').textContent=Math.min(game.lessonIndex,LESSONS.length);
+  $('#lapMaxText').textContent=LESSONS.length;
   $('#scoreText').textContent=Math.round(game.score);
-  $('#coinText').innerHTML='🚗 '+game.safeOvertakes+' selamat · 🎓 '+game.lessonCorrect+'/5 · 🛡️ <span class="'+(game.safety>=75?'safetyGood':game.safety>=45?'safetyWarn':'safetyBad')+'">'+Math.round(game.safety)+'%</span>';
-  $('#mission').innerHTML='Misi: <strong>Potong selamat +10</strong> · Lencana +5 · Kuiz betul +15 · Elakkan pelanggaran.';
+  $('#coinText').innerHTML='⭐ '+game.coins+' · 🧠 '+game.lessonCorrect+'/'+LESSONS.length+' · 🚗 '+game.safeOvertakes;
+  const leftMs=Math.max(0,game.nextLessonMs-game.activePlayMs);
+  const totalSec=Math.ceil(leftMs/1000), mm=Math.floor(totalSec/60), ss=String(totalSec%60).padStart(2,'0');
+  $('#mission').innerHTML=game.lessonIndex>=LESSONS.length?'Misi: <strong>Semua 10 soalan selesai!</strong>':`Misi: <strong>Kumpul bintang & potong selamat</strong> · Soalan seterusnya ${mm}:${ss}`;
   $('#boostPct').textContent=Math.round(game.boost)+'%';
-  const gear=game.speed<5?'N':Math.min(7,Math.max(1,Math.ceil(game.speed/34)));
-  $('#gearText').textContent=game.speed<5?'Gear N · Tekan GAS':'Gear '+gear;
+  const gear=dashSpeed<3?'N':Math.min(6,Math.max(1,Math.ceil(dashSpeed/24)));
+  $('#gearText').textContent=!game.running?'Gear N · Tekan MINYAK':'Gear '+gear+' · Tekan MINYAK untuk memecut';
 }
 function showToast(text){const t=$('#toast');t.textContent=text;t.classList.add('show');clearTimeout(showToast.t);showToast.t=setTimeout(()=>t.classList.remove('show'),750)}
 
-function startGame(){game.startedAt=performance.now();const name=$('#playerName').value.trim();if(!name){showOverlay('<h2>Nama diperlukan</h2><p>Masukkan nama peserta dahulu sebelum mula.</p><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">OK</button></div>');return}ensureAudio();game.running=false;game.paused=false;game.speed=0;game.targetSpeed=0;game.maxSpeed=Number($('#speedLimit').value);game.laps=Number($('#lapCount').value);game.lap=1;game.distance=0;game.score=0;game.coins=0;game.overtakes=0;game.safeOvertakes=0;game.unsafePasses=0;game.safety=100;game.lessonIndex=0;game.lessonCorrect=0;game.lessonGap=(TRACKS[selectedTrack].lapDistance*game.laps)/(LESSONS.length+1);game.nextLessonAt=game.lessonGap;game.quizActive=false;game.carX=0;game.carVX=0;game.trackPos=0;game.roadScroll=0;game.worldTravel=0;game.objects=[];game.spawn=0;game.boost=100;game.clean=true;game.bestSpeed=0;game.crash=0;$('#trackText').textContent=TRACKS[selectedTrack].name;$('#lapMaxText').textContent=game.laps;menuScreen.classList.remove('active');gameScreen.classList.add('active');resize();startMusic();startEngine();updateHUD();countdownStart()}
+function enterAndroidGameMode(){
+  try{
+    if(window.matchMedia('(max-width:900px)').matches){
+      const el=document.documentElement;
+      if(!document.fullscreenElement&&el.requestFullscreen) el.requestFullscreen({navigationUI:'hide'}).catch(()=>{});
+      if(screen.orientation&&screen.orientation.lock) screen.orientation.lock('portrait').catch(()=>{});
+    }
+  }catch(e){}
+}
+
+function startGame(){game.startedAt=performance.now();const name=$('#playerName').value.trim();if(!name){showOverlay('<h2>Nama diperlukan</h2><p>Masukkan nama peserta dahulu sebelum mula.</p><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">OK</button></div>');return}enterAndroidGameMode();ensureAudio();game.running=false;game.paused=false;game.speed=0;game.targetSpeed=0;game.maxSpeed=Number($('#speedLimit').value);const speedOpt=$('#speedLimit').selectedOptions[0];game.dashboardMax=Number(speedOpt?.dataset?.dash||120);game.laps=1;game.lap=1;game.distance=0;game.score=0;game.coins=0;game.overtakes=0;game.safeOvertakes=0;game.unsafePasses=0;game.safety=100;game.lessonIndex=0;game.lessonCorrect=0;game.activePlayMs=0;game.questionIntervalMs=60000;game.nextLessonMs=game.questionIntervalMs;game.quizActive=false;game.carX=0;game.carVX=0;game.trackPos=0;game.roadScroll=0;game.worldTravel=0;game.objects=[];game.spawn=0;game.boost=100;game.clean=true;game.bestSpeed=0;game.crash=0;$('#trackText').textContent=TRACKS[selectedTrack].name;$('#lapMaxText').textContent=LESSONS.length;menuScreen.classList.remove('active');gameScreen.classList.add('active');resize();startMusic();startEngine();updateHUD();countdownStart()}
 function countdownStart(){const c=$('#countdown'),t=$('#countText');c.classList.add('show');let n=3;t.textContent=n;beep(520,.08,'square',.05);const id=setInterval(()=>{n--;if(n>0){t.textContent=n;beep(520,.08,'square',.05)}else if(n===0){t.textContent='GO!';beep(950,.12,'triangle',.07)}else{clearInterval(id);c.classList.remove('show');game.targetSpeed=0;game.speed=0;lastShiftGear=0;game.running=true;game.last=performance.now();cancelAnimationFrame(game.raf);game.raf=requestAnimationFrame(frame)}},700)}
 
-function finishGame(){game.running=false;game.paused=false;game.quizActive=false;stopEngine();stopMusic();cancelAnimationFrame(game.raf);const bonus=game.clean?20:0;const learningBonus=game.lessonCorrect===LESSONS.length?25:0;const finalScore=Math.round(clamp(game.score+bonus+learningBonus,0,9999));saveRanking(finalScore);const grade=game.safety>=90?'Cemerlang':game.safety>=75?'Baik':game.safety>=55?'Perlu lebih berhati-hati':'Perlu latihan keselamatan';showOverlay(`<div style="font-size:58px">🏁</div><h2>Misi Tamat!</h2><p><b>${escapeHtml($('#playerName').value.trim())}</b><br>${TRACKS[selectedTrack].name} · ${game.laps} lap</p><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:12px 0"><div class="rankRow" style="display:block;text-align:center"><div class="rankMeta">Jumlah Markah</div><div class="rankScore" style="font-size:26px">${finalScore}</div></div><div class="rankRow" style="display:block;text-align:center"><div class="rankMeta">Potong Selamat</div><div class="rankScore" style="font-size:26px">${game.safeOvertakes}</div></div><div class="rankRow" style="display:block;text-align:center"><div class="rankMeta">Misi Ilmu</div><div class="rankScore" style="font-size:22px">🎓 ${game.lessonCorrect}/5</div></div><div class="rankRow" style="display:block;text-align:center"><div class="rankMeta">Keselamatan</div><div class="rankScore" style="font-size:22px">🛡️ ${Math.round(game.safety)}%</div></div></div><div class="resultLesson"><b>Penilaian pemanduan: ${grade}</b><br>Permainan ini memberi markah lebih tinggi untuk memilih lorong dengan selamat, mengelakkan pelanggaran dan memahami situasi asas keselamatan jalan raya.</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay();startGame()">Main Lagi</button><button class="ovBtn" onclick="backToMenu()">Menu Utama</button></div>`) }
+function finishGame(){
+  game.running=false;game.paused=false;game.quizActive=false;stopEngine();stopMusic();cancelAnimationFrame(game.raf);
+  const bonus=game.clean?20:0;const learningBonus=game.lessonCorrect===LESSONS.length?40:0;
+  const finalScore=Math.round(clamp(game.score+bonus+learningBonus,0,9999));saveRanking(finalScore);
+  const grade=game.lessonCorrect>=9?'🌟 Hebat!':game.lessonCorrect>=7?'👏 Bagus!':game.lessonCorrect>=5?'😊 Teruskan belajar':'💪 Cuba lagi!';
+  showOverlay(`<div style="font-size:66px">🏆</div><h2>${grade}</h2><p><b>${escapeHtml($('#playerName').value.trim())}</b><br>Anda sudah tamat 10 Misi JPJ.</p><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:12px 0"><div class="rankRow" style="display:block;text-align:center"><div class="rankMeta">Jumlah Markah</div><div class="rankScore" style="font-size:26px">${finalScore}</div></div><div class="rankRow" style="display:block;text-align:center"><div class="rankMeta">Jawapan Betul</div><div class="rankScore" style="font-size:26px">🧠 ${game.lessonCorrect}/10</div></div><div class="rankRow" style="display:block;text-align:center"><div class="rankMeta">Bintang</div><div class="rankScore" style="font-size:24px">⭐ ${game.coins}</div></div><div class="rankRow" style="display:block;text-align:center"><div class="rankMeta">Potong Selamat</div><div class="rankScore" style="font-size:24px">🚗 ${game.safeOvertakes}</div></div></div><div class="resultLesson"><b>Apa yang dipelajari:</b><br>Asas keselamatan jalan raya: lampu isyarat, tanda BERHENTI, jarak selamat, tukar lorong, kawasan sekolah, topi keledar dan tali pinggang keledar.</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay();startGame()">Main Lagi</button><button class="ovBtn" onclick="backToMenu()">Menu Utama</button></div>`)
+}
 
-function saveRanking(score){const key='jpjStreetDriveRank';let a=[];try{a=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}a.push({name:$('#playerName').value.trim(),score,track:selectedTrack,laps:game.laps,safe:game.safeOvertakes,learn:game.lessonCorrect,safety:Math.round(game.safety),ts:Date.now()});a.sort((x,y)=>y.score-x.score||x.ts-y.ts);try{localStorage.setItem(key,JSON.stringify(a.slice(0,50)))}catch(e){}}
-function showRanking(){let a=[];try{a=JSON.parse(localStorage.getItem('jpjStreetDriveRank')||'[]')}catch(e){}showOverlay(`<div style="font-size:48px">🏆</div><h2>Ranking</h2><div class="rankList">${a.length?a.slice(0,15).map((r,i)=>`<div class="rankRow"><div class="rankPos">${i+1}</div><div><div class="rankName">${escapeHtml(r.name)}</div><div class="rankMeta">${TRACKS[r.track]?.name||r.track} · ${r.laps} lap · 🚗 ${r.safe??0} · 🎓 ${r.learn??0}/5</div></div><div class="rankScore">${r.score}</div></div>`).join(''):'<p>Belum ada rekod.</p>'}</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">Tutup</button></div>`)}
-function showHow(){showOverlay(`<div style="font-size:48px">🎮</div><h2>Cara Main & Apa Dipelajari</h2><p>Dalam game ini, trafik sengaja tidak terlalu padat. Kejar satu kereta, <b>tukar ke lorong yang kosong</b> dan lepasi kereta itu untuk mendapat <b>Potong Selamat +10</b>. Kumpul <b>Lencana Selamat +5</b> dan jawab 5 <b>Misi Ilmu +15</b>. Pelanggaran dan memotong terlalu rapat akan menurunkan Meter Keselamatan.</p><div class="resultLesson"><b>Nilai pembelajaran:</b><br>• pemerhatian sebelum menukar lorong<br>• memberi laluan kepada pejalan kaki<br>• memahami had laju<br>• berhati-hati di kawasan sekolah<br>• kepentingan jarak selamat</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">Faham</button></div>`) }
+function saveRanking(score){const key='jpjStreetDriveRank';let a=[];try{a=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}a.push({name:$('#playerName').value.trim(),score,track:selectedTrack,safe:game.safeOvertakes,learn:game.lessonCorrect,stars:game.coins,ts:Date.now()});a.sort((x,y)=>y.score-x.score||x.ts-y.ts);try{localStorage.setItem(key,JSON.stringify(a.slice(0,50)))}catch(e){}}
+function showRanking(){let a=[];try{a=JSON.parse(localStorage.getItem('jpjStreetDriveRank')||'[]')}catch(e){}showOverlay(`<div style="font-size:48px">🏆</div><h2>Ranking</h2><div class="rankList">${a.length?a.slice(0,15).map((r,i)=>`<div class="rankRow"><div class="rankPos">${i+1}</div><div><div class="rankName">${escapeHtml(r.name)}</div><div class="rankMeta">${TRACKS[r.track]?.name||r.track} · ⭐ ${r.stars??0} · 🚗 ${r.safe??0} · 🧠 ${r.learn??0}/10</div></div><div class="rankScore">${r.score}</div></div>`).join(''):'<p>Belum ada rekod.</p>'}</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">Tutup</button></div>`)}
+function showHow(){showOverlay(`<div style="font-size:54px">🎮</div><h2>Cara Main</h2><p>Tekan dan tahan <b>⛽ MINYAK</b> untuk memecut. Dashboard hanya memaparkan skala biasa <b>90 / 120 / 140 km/j</b>, tetapi pergerakan game dipertingkatkan supaya kereta terasa sangat laju. Gunakan KIRI/KANAN untuk mengelak dan memotong kereta. Kumpul <b>⭐ Bintang Pintar +5</b>. Kira-kira setiap <b>1 minit</b>, satu soalan JPJ akan muncul. Ada <b>10 soalan</b> keselamatan jalan raya.</p><div class="resultLesson"><b>Nilai pembelajaran:</b><br>🚦 faham lampu isyarat<br>🛑 kenal tindakan di tanda jalan<br>🪖 amalan topi keledar dan tali pinggang<br>🚸 keselamatan pejalan kaki dan kawasan sekolah</div><div class="overlayBtns"><button class="ovBtn primary" onclick="closeOverlay()">Faham</button></div>`) }
 function showOverlay(html){$('#overlayCard').innerHTML=html;$('#overlay').classList.add('show')}function closeOverlay(){$('#overlay').classList.remove('show')}window.closeOverlay=closeOverlay;window.startGame=startGame;
 function backToMenu(){closeOverlay();game.running=false;game.paused=false;cancelAnimationFrame(game.raf);stopEngine();stopMusic();gameScreen.classList.remove('active');menuScreen.classList.add('active')}window.backToMenu=backToMenu;
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
