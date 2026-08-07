@@ -478,8 +478,9 @@ function drawCoin(x,y,s){ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.rotate
 function drawPlayerCar(w,h){
   const rw=roadWidthAtDepth(1,w),roadBottomCenter=roadCenterAtDepth(1,w);
   const x=roadBottomCenter+game.carX*rw*.285;
-  const y=h*.79;
-  const s=clamp(Math.min(w/420,h/710)*1.13,.84,1.38);
+  const y=h*.80;
+  // Android view: reduce player car size so it matches surrounding traffic better.
+  const s=clamp(Math.min(w/420,h/710)*0.82,.62,.98);
   const pal=currentPalette();
   ctx.save();ctx.translate(x,y);ctx.rotate(-game.carVX*.012);ctx.scale(s,s);
 
@@ -571,7 +572,7 @@ function drawPlayerCar(w,h){
   if(game.brake){ctx.fillStyle='rgba(255,74,88,.24)';ctx.beginPath();ctx.ellipse(-36,13,24,10,0,0,Math.PI*2);ctx.ellipse(36,13,24,10,0,0,Math.PI*2);ctx.fill()}
 
   ctx.restore();
-  return{x,y,w:150*s,h:118*s};
+  return{x,y,w:112*s,h:88*s};
 }
 function roundRect(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r);return ctx}
 
