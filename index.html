@@ -480,7 +480,7 @@ function drawPlayerCar(w,h){
   const x=roadBottomCenter+game.carX*rw*.285;
   const y=h*.80;
   // Android view: reduce player car size so it matches surrounding traffic better.
-  const s=clamp(Math.min(w/420,h/710)*0.50,.42,.56);
+  const s=clamp(Math.min(w/420,h/710)*0.52,.44,.58);
   const pal=currentPalette();
   ctx.save();ctx.translate(x,y);ctx.rotate(-game.carVX*.012);ctx.scale(s,s);
 
